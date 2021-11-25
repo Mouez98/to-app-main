@@ -170,11 +170,19 @@ header nav {
   z-index: 2;
   background-color: var(--Very-Dark-Desaturated-Blue);
 }
+.container .tasks .task .check svg {
+  pointer-events: none;
+}
 .container .task h4{
   /* flex-grow: 1; */
   margin-left: 30px;
   font-weight: normal;
 }
+.container .task.finished h4 {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+.container .task.done h4
 .container .task h4, button, .check {
   cursor: pointer;
 }
@@ -182,6 +190,9 @@ header nav {
  background-color: transparent;
  border: none;
  margin-left: auto;
+}
+.container .task button.delete svg, .container .task h4 {
+  pointer-events: none;
 }
 .container .task .gradient-border {
   background-image: linear-gradient(
@@ -228,10 +239,7 @@ header nav {
 .container .task.finished .check svg {
   display: block;
 }
-.container .task.finished h4 {
-  text-decoration: line-through;
-  opacity: 0.3;
-}
+
 /* Styling Footer of header */
 .header  footer {
   background-color: var(--Very-Dark-Desaturated-Blue);
