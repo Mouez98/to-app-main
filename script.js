@@ -19,6 +19,19 @@ theme.addEventListener("click", function (e) {
     }
   }
 });
+//State Of the task (Delete or Done)
+tasksContainer.addEventListener("click", function(task){
+const todo = task.target ;
+
+//Delete Todo 
+if(todo.classList.contains("delete")){
+  tasksContainer.removeChild(todo.parentNode)
+}
+//Finished todo
+if(todo.classList.contains("check")){
+  todo.parentNode.classList.toggle("finished")
+}
+})
 
 //Function
 
