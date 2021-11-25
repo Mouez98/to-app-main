@@ -30,7 +30,7 @@ body.theme.dark {
 }
 /* Body light them */
 body.theme.light {
-  background-color: var(--Very-Light-Gray);
+  background-color: var(--Done-task);
  
 }
 .container {
@@ -111,11 +111,6 @@ header nav {
   height: 20px;
   display: grid;
   place-items: center;
-  /* background-image: linear-gradient(
-    to bottom,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  ); */
   left: 10px;
   top: 13px;
 }
@@ -248,7 +243,7 @@ header nav {
   border-radius: 0 0 4px 4px;
 }
 .header  footer .completion {
-  display: flex;
+ display: flex;
   cursor: pointer;
 }
 .header  footer .completion div {
@@ -258,14 +253,66 @@ header nav {
 .header  footer .completion .all {
   color: var(--color-Bright-Blue);
 }
+/* Hide The Mobile completion */
+.header  .completion-mobile {
+  display: none;
+}
 
 /* header's Footer Light Theme */
 .light .header  footer {
   color: rgb(79, 80, 105);
   background-color: var(--Very-Light-Gray);
 }
-/* Bottom Part  */
-/* .todos {
-  background-color: var(--Very-Dark-Blue);
-  height: 100vh;
-} */
+
+/* Small devices */
+
+@media (max-width: 375px) {
+  .container {
+    width: 85%;
+  }
+  /* Header Styling */
+  .header {
+  }
+  .header nav .svg {
+     transform: scale(0.9);
+     margin: auto 0 auto -10px;
+  }
+ 
+/* Styling Footer of header */
+.header  footer {
+  margin-bottom: 15px;
+}
+.header  .completion-mobile {
+  font-family: inherit;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  padding: 13px 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(79, 80, 105);
+  border-radius: 4px;
+}
+/* for light theme */
+.light .header  .completion-mobile {
+  color: rgb(79, 80, 105);
+  background-color: var(--Very-Light-Gray);
+}
+.header  .completion-mobile .all, .active {
+  margin-right: 15px;
+}
+.header footer .completion {
+ display: none;
+
+}
+.header .completion-mobile .all {
+ color: var(--color-Bright-Blue);
+}
+
+/* header's Footer Light Theme */
+.light .header  footer {
+ color: rgb(79, 80, 105);
+ background-color: var(--Very-Light-Gray);
+}
+  
+}
