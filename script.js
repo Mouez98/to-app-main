@@ -65,7 +65,7 @@ function addTask(e) {
   //Insert The task Before the footer
   tasksContainer.insertBefore(task, footer);
   //Empty tha input value
-  inputValue = "whaaaat";
+  input.value = "";
 }
 itemsNumber()
 }
