@@ -1,13 +1,13 @@
-//Variables
-
 const theme = document.querySelector(".svg");
 const body = document.querySelector("body");
 const form = document.querySelector("form");
 const tasksContainer = document.querySelector(".tasks");
+const input = document.getElementById("input");
+let tasksNumber = document.querySelector(".items-left");
 let arrayOfTasks = [];
 
 //Event Listener
-
+document.addEventListener("DOMContentLoaded", itemsNumber)
 //submit task
 form.addEventListener("submit", addTask);
 
@@ -25,7 +25,8 @@ const todo = task.target ;
 
 //Delete Todo 
 if(todo.classList.contains("delete")){
-  tasksContainer.removeChild(todo.parentNode)
+  tasksContainer.removeChild(todo.parentNode);
+  itemsNumber();
 }
 //Finished todo
 if(todo.classList.contains("check")){
@@ -38,9 +39,10 @@ if(todo.classList.contains("check")){
 function addTask(e) {
   e.preventDefault();
   //Input Value
-  let input = document.getElementById("input").value;
+  let inputValue = input.value;
+  if(inputValue){
   //Add the task to the arrayOfTasks
-  arrayOfTasks.push(input)
+  arrayOfTasks.push(inputValue)
   //Create the new Div
   let task = document.createElement("div");
   //Give the div className
@@ -54,7 +56,7 @@ function addTask(e) {
               </svg>
             </div>
           
-          <h4> ${input}</h4>
+          <h4> ${inputValue}</h4>
           
           <button class="delete"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg></button>
     `;
@@ -63,5 +65,12 @@ function addTask(e) {
   //Insert The task Before the footer
   tasksContainer.insertBefore(task, footer);
   //Empty tha input value
-  input = "whaaaat";
+  inputValue = "whaaaat";
+}
+itemsNumber()
+}
+//Items Number
+
+function itemsNumber(){
+  tasksNumber.innerText = `${tasksContainer.childElementCount - 1} items left`
 }
