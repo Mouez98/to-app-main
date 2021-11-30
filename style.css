@@ -230,11 +230,7 @@ header nav {
 .container .task.finished {
 }
 .container .task.finished .check {
-  background-image: linear-gradient(
-    150deg,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
+  background-image: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 .container .task.finished .check svg {
   display: block;
@@ -250,6 +246,12 @@ header nav {
   color: rgb(79, 80, 105);
   border-radius: 0 0 4px 4px;
 }
+.header  footer .clear {
+  cursor: pointer;
+}
+.header footer.zero-items {
+  border-radius: 4px;
+}
 .header  footer .completion {
  display: flex;
   cursor: pointer;
@@ -259,7 +261,8 @@ header nav {
   font-weight: bold;
 }
 .header  footer .completion .all {
-  color: var(--color-Bright-Blue);
+  /* color: var(--color-Bright-Blue); */
+
 }
 /* Hide The Mobile completion */
 .header  .completion-mobile {
