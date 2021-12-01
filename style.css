@@ -196,7 +196,7 @@ header nav {
 }
 .container .task .gradient-border {
   background-image: linear-gradient(
-    to bottom,
+    135deg ,
     hsl(192, 100%, 67%),
     hsl(280, 87%, 65%)
   );
@@ -207,10 +207,10 @@ header nav {
   z-index: 1;
   top: 12px;
   left: 14px;
-  display: none;
+ display: none;
 }
-.container .task .gradient-border:hover{
-  display: grid;
+.container .tasks .task .check:hover .gradient-border{
+ display: block;
 }
 
 .container .task .check svg {
@@ -259,6 +259,9 @@ header nav {
 .header  footer .completion div {
   padding: 0px 10px;
   font-weight: bold;
+}
+.header  footer .completion div:hover, .clear:hover {
+  color: var(--Very-Light-Gray);
 }
 .header  footer .completion .all {
   /* color: var(--color-Bright-Blue); */

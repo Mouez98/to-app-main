@@ -1,13 +1,12 @@
 const theme = document.querySelector(".svg");
-const body = document.querySelector("body");
 const form = document.querySelector("form");
 const tasksContainer = document.getElementById("tasks");
-const input = document.getElementById("input");
 const delBtnAll = document.querySelector(".clear");
-let tasksNumber = document.querySelector(".items-left");
 let tasksFooter = document.getElementById("footer");
+
+
 let arrayOfTasks = [];
-console.log(delBtnAll)
+
 //Event Listener
 document.addEventListener("DOMContentLoaded", itemsNumber)
 form.addEventListener("submit", addTask);
@@ -28,6 +27,8 @@ function delAll(){
 }
 // Theme function
 function themeToggle(e){
+  //Get The Body 
+const body = document.querySelector("body");
   if (e.currentTarget.classList.contains("svg")) {
     if (body.classList.contains("theme")) {
       body.classList.toggle("light");
@@ -51,6 +52,8 @@ function deleteOrDone(task){
 
 function addTask(e) {
   e.preventDefault();
+  //Input 
+  const input = document.getElementById("input");
   //Input Value
   let inputValue = input.value;
   if(inputValue){
@@ -84,6 +87,8 @@ itemsNumber()
 //Items Number
 
 function itemsNumber(){
+  let tasksNumber = document.querySelector(".items-left");
+
   tasksNumber.innerText = `${tasksContainer.childElementCount - 1} items left`
   if(tasksContainer.childElementCount === 1){
     //Edit Footer's Border-raduis
