@@ -135,7 +135,7 @@ case 'completed' :
 function stylingTask(){
   [...tasksContainer.children].forEach(task => {
     if(task.classList.contains("task")){
-       task.addEventListener("mouseenter", ()=>{
+       task.addEventListener("mouseover", ()=>{
          [...task.children].forEach(el => {
            if(el.classList.contains("delete")){
              el.style.display = "block";
