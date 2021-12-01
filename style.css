@@ -190,6 +190,7 @@ header nav {
  background-color: transparent;
  border: none;
  margin-left: auto;
+ display: none;
 }
 .container .task button.delete svg, .container .task h4 {
   pointer-events: none;
@@ -207,10 +208,11 @@ header nav {
   z-index: 1;
   top: 12px;
   left: 14px;
- display: none;
+  display: none;
+ 
 }
-.container .tasks .task .check:hover .gradient-border{
- display: block;
+.container .tasks .task .gradient-border{
+display: block;
 }
 
 .container .task .check svg {
