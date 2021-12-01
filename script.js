@@ -137,12 +137,26 @@ function stylingTask(){
     if(task.classList.contains("task")){
        task.addEventListener("mouseenter", ()=>{
          [...task.children].forEach(el => {
-          el.classList.contains("delete")? el.style.display = "block" : el.style.display = "block"
+           if(el.classList.contains("delete")){
+             el.style.display = "block";
+           }
+           if(!task.classList.contains("finished") && el.classList.contains("gradient-border") ){
+             el.style.display = "block";
+           }
          })
        }
        
        )
-       task.addEventListener("mouseout", ()=> console.log("We are out"))
+       task.addEventListener("mouseout", el => {
+        [...task.children].forEach(el => {
+          if(el.classList.contains("delete")){
+            el.style.display = "none";
+          }
+          if(!task.classList.contains("finished") && el.classList.contains("gradient-border") ){
+            el.style.display = "none";
+          }
+        })
+       })
     }
   })
 }

@@ -151,6 +151,7 @@ header nav {
   display: flex;
   padding: 14px 20px;
   position: relative;
+  pointer-events: all;
 }
 .container .tasks div.task:nth-child(1) {
   border-radius: 4px 4px 0 0;
@@ -160,7 +161,7 @@ header nav {
   position: absolute;
   top: 13px;
   left: 15px;
- border-radius: 50%; 
+  border-radius: 50%; 
   border: 1px solid var(--text-color);
   width: 20px;
   height: 20px;
@@ -187,10 +188,10 @@ header nav {
   cursor: pointer;
 }
 .container .task button.delete {
- background-color: transparent;
- border: none;
- margin-left: auto;
- display: none;
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+  display: none;
 }
 .container .task button.delete svg, .container .task h4 {
   pointer-events: none;
@@ -211,9 +212,9 @@ header nav {
   display: none;
  
 }
-.container .tasks .task .gradient-border{
+/* .container .tasks .task .gradient-border{
 display: block;
-}
+} */
 
 .container .task .check svg {
   display: none;
