@@ -128,6 +128,22 @@ case 'completed' :
   
 }
 });
-
 }
 
+//Task styling 
+
+function stylingTask(){
+  [...tasksContainer.children].forEach(task => {
+    if(task.classList.contains("task")){
+       task.addEventListener("mouseenter", ()=>{
+         [...task.children].forEach(el => {
+          el.classList.contains("delete")? el.style.display = "block" : el.style.display = "block"
+         })
+       }
+       
+       )
+       task.addEventListener("mouseout", ()=> console.log("We are out"))
+    }
+  })
+}
+stylingTask()
