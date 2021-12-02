@@ -138,10 +138,13 @@ function stylingTask(){
        task.addEventListener("mouseover", ()=>{
          [...task.children].forEach(el => {
            if(el.classList.contains("delete")){
-             el.style.display = "block";
+             el.style.display = "flex";
            }
            if(!task.classList.contains("finished") && el.classList.contains("gradient-border") ){
-             el.style.display = "block";
+             let borderGradient = el;
+             el.addEventListener("mouseover", ()=>{
+               borderGradient.style.display = "flex" ;
+             } )
            }
          })
        }
