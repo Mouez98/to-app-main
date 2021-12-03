@@ -2,7 +2,8 @@ const theme = document.querySelector(".svg");
 const form = document.querySelector("form");
 const tasksContainer = document.getElementById("tasks");
 const delBtnAll = document.querySelector(".clear");
-let tasksFooter = document.getElementById("footer");
+const tasksFooter = document.getElementById("footer");
+const mobileFooter = document.querySelector(".completion-mobile");
 
 
 let arrayOfTasks = [];
@@ -13,6 +14,7 @@ form.addEventListener("submit", addTask);
 theme.addEventListener("click", themeToggle);
 tasksContainer.addEventListener("click", deleteOrDone );
 tasksFooter.addEventListener("click", completionState);
+mobileFooter.addEventListener("click", completionState);
 delBtnAll.addEventListener("click", delAll)
 
 //Function

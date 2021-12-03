@@ -1,4 +1,4 @@
-/* Variables */
+
 :root {
   --color-Bright-Blue: hsl(220, 98%, 61%);
   --check-bg-gradiant: linear-gradient(150deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -13,7 +13,9 @@
   --Input-Footer-color: hsl(236, 22%, 48%);
   --Done-task: hsl(233, 11%, 84%);
 }
+
 /* Global Styling */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,20 +26,20 @@ body {
   font-size: 18px;
   
 }
+
 /* Body Dark Theme */
+
 body.theme.dark {
   background-color: var(--Very-Dark-Blue);
 }
-/* Body light them */
-body.theme.light {
-  background-color: var(--Done-task);
- 
-}
+
 .container {
   width: 500px;
   margin: 0 auto;
 }
+
 /* Header Styling */
+
 .header {
   padding: 40px 0;
   height: 230px;
@@ -52,27 +54,15 @@ body.theme.light {
    background-color: transparent; 
 }
 .dark .header nav .svg svg.light {
-  
    display: none; 
 }
 .dark .header nav .svg svg.dark {
    display: block; 
   
 }
-/* Header light Theme */
-.light .header {
-  background-image: url(./images/bg-desktop-light.jpg);
-  color: #fff;
-}
-/* Nav Light Theme */
-.light .header nav .svg svg.dark {
-   display: none; 
-}
-.light .header nav .svg svg.light {
-   display: block; 
-}
 
 /* Nav Styling */
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -118,29 +108,11 @@ header nav {
   display: none;
 }
 
-/* Form Light Theme */
-.light .header form input[type="text"] {
-  color: var(--Input-Footer-color);
-  background-color: var(--Very-Light-Gray);
-}
-
 /* Tasks Container */
 
 .container .tasks {
   box-shadow: 0px 12px 14px 0px hsl(232 25% 10% / 1);
   border-radius: 0 0 4px 4px;
-}
-
-/* Tasks Light Theme */
-.light .header .tasks {
-  box-shadow: 0px 12px 14px 0px var(--Done-task);
-}
-.light .header .tasks .task {
-  background-color: var(--Very-Light-Gray);
-  color: var(--Very-Dark-Desaturated-Blue);
-}
-.light .header .tasks .task .check {
-  background-color: var(--Very-Light-Gray);
 }
 
 /* Task Styling  */
@@ -170,13 +142,7 @@ header nav {
   z-index: 2;
   background-color: var(--Very-Dark-Desaturated-Blue);
 }
-.container .tasks .task .check {
-  
-  
-}
 .container .task .gradient-border {
-  /*
-   */
   background-color:var(--text-color);
   border-radius: 50%;
   width: 22px;
@@ -185,7 +151,6 @@ header nav {
   z-index: 1;
   top: 0;
   left: 0;
-  
 }
 .container .tasks .task.finished .gradient-border {
   background-image: var(--check-bg-gradiant);
@@ -197,7 +162,6 @@ header nav {
   pointer-events: none;
 }
 .container .task h4{
-  /* flex-grow: 1; */
   margin-left: 30px;
   font-weight: normal;
 }
@@ -221,8 +185,6 @@ header nav {
 .container .task button.delete svg, .container .task h4 {
   pointer-events: none;
 }
-
-
 .container .task .check svg {
   display: none;
 }
@@ -236,8 +198,11 @@ header nav {
   left: 0;
   opacity: 0.3;
 }
+
 /* Finished Task Styling */
+
 .container .task.finished {
+
 }
 .container .task.finished .check {
   background-image: var(--check-bg-gradiant);
@@ -247,6 +212,7 @@ header nav {
 }
 
 /* Styling Footer of header */
+
 .header  footer {
   background-color: var(--Very-Dark-Desaturated-Blue);
   padding: 13px 20px;
@@ -274,19 +240,67 @@ header nav {
   color: var(--Very-Light-Gray);
 }
 .header  footer .completion .all {
-  /* color: var(--color-Bright-Blue); */
-
 }
+
 /* Hide The Mobile completion */
+
 .header  .completion-mobile {
   display: none;
 }
 
+/*** Start Light Theme styling ***/
+
+/* Body light them */
+
+body.theme.light {
+  background-color: var(--Done-task);
+}
+/* Header light Theme */
+
+.light .header {
+  background-image: url(./images/bg-desktop-light.jpg);
+  color: #fff;
+}
+/* Nav Light Theme */
+
+.light .header nav .svg svg.dark {
+  display: none; 
+}
+.light .header nav .svg svg.light {
+  display: block; 
+}
+
+/* Form Light Theme */
+
+.light .header form input[type="text"] {
+  color: var(--Input-Footer-color);
+  background-color: var(--Very-Light-Gray);
+}
+
+/* Tasks Light Theme */
+
+.light .header .tasks {
+  box-shadow: 0px 12px 14px 0px var(--Done-task);
+}
+.light .header .tasks .task {
+  background-color: var(--Very-Light-Gray);
+  color: var(--Very-Dark-Desaturated-Blue);
+}
+.light .header .tasks .task .check {
+  background-color: var(--Very-Light-Gray);
+}
+
 /* header's Footer Light Theme */
+
 .light .header  footer {
   color: rgb(79, 80, 105);
   background-color: var(--Very-Light-Gray);
 }
+.light .header  footer .completion div:hover, .clear:hover {
+  color: var(--Very-Dark-Desaturated-Blue);
+}
+
+/*** End Light Theme styling ***/
 
 /* Small devices */
 
@@ -294,7 +308,9 @@ header nav {
   .container {
     width: 85%;
   }
+
   /* Header Styling */
+
   .header {
   }
   .header nav .svg {
@@ -303,10 +319,11 @@ header nav {
   }
  
 /* Styling Footer of header */
-.header  footer {
+
+.header footer {
   margin-bottom: 15px;
 }
-.header  .completion-mobile {
+.header .completion-mobile {
   font-family: inherit;
   background-color: var(--Very-Dark-Desaturated-Blue);
   padding: 13px 20px;
@@ -317,12 +334,17 @@ header nav {
   color: rgb(79, 80, 105);
   border-radius: 4px;
 }
+.header .completion-mobile div {
+  cursor: pointer;
+}
+
 /* for light theme */
-.light .header  .completion-mobile {
+
+.light .header .completion-mobile {
   color: rgb(79, 80, 105);
   background-color: var(--Very-Light-Gray);
 }
-.header  .completion-mobile .all, .active {
+.header .completion-mobile .all, .active {
   margin-right: 15px;
 }
 .header footer .completion {
@@ -334,6 +356,7 @@ header nav {
 }
 
 /* header's Footer Light Theme */
+
 .light .header  footer {
  color: rgb(79, 80, 105);
  background-color: var(--Very-Light-Gray);
