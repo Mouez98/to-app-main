@@ -46,7 +46,7 @@ function deleteOrDone(task){
   }
   //Finished todo
   if(todo.classList.contains("check")){
-    todo.parentNode.classList.toggle("finished")
+    todo.parentNode.parentNode.classList.toggle("finished")
   }
   }
 
@@ -65,12 +65,14 @@ function addTask(e) {
   task.className = "task";
   //Add InnerHtml
   task.innerHTML = `
-          <div class="gradient-border"></div> 
-          <div class="check">
+          <div class="gradient-border">
+           <div class="check">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
                 <path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6" />
               </svg>
             </div>
+          </div> 
+          
           
           <h4> ${inputValue}</h4>
           
@@ -83,6 +85,7 @@ function addTask(e) {
   input.value = "";
 }
 itemsNumber()
+stylingTask()
 }
 //Items Number
 
@@ -130,34 +133,25 @@ case 'completed' :
 });
 }
 
-//Task styling 
+//Displaying Delete Btn on mouseover
 
 function stylingTask(){
+  //Loop throught tasks
   [...tasksContainer.children].forEach(task => {
     if(task.classList.contains("task")){
        task.addEventListener("mouseover", ()=>{
+         //Displaying The invisible items
          [...task.children].forEach(el => {
            if(el.classList.contains("delete")){
              el.style.display = "flex";
            }
-           if(!task.classList.contains("finished") && el.classList.contains("gradient-border") ){
-             let borderGradient = el;
-             el.addEventListener("mouseover", ()=>{
-               borderGradient.style.display = "flex" ;
-             } )
-           }
          })
        }
-       
        )
-       task.addEventListener("mouseout", el => {
+       task.addEventListener("mouseout", () => {
         [...task.children].forEach(el => {
-          if(el.classList.contains("delete")){
-            el.style.display = "none";
-          }
-          if(!task.classList.contains("finished") && el.classList.contains("gradient-border") ){
-            el.style.display = "none";
-          }
+          el.classList.contains("delete") ? el.style.display = "none": el ;
+
         })
        })
     }
